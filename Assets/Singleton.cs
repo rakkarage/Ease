@@ -10,7 +10,7 @@ namespace ca.HenrySoftware.Ease
 			{
 				if (_instance == null)
 				{
-					_instance = (T)FindObjectOfType(typeof(T));
+					_instance = FindObjectOfType(typeof(T)) as T;
 					if (_instance == null)
 					{
 						Debug.LogError("Missing: " + typeof(T));
