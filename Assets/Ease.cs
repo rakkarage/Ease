@@ -51,7 +51,7 @@ namespace ca.HenrySoftware.Ease
 			float delay, int repeat, bool pingPong, bool realTime)
 		{
 			var counter = repeat;
-			while (repeat == 0 || counter > 0)
+			while (repeat == 0 || repeat == -1 || counter > 0)
 			{
 				if (delay > 0f)
 				{
@@ -86,7 +86,7 @@ namespace ca.HenrySoftware.Ease
 				}
 				if (repeat != 0)
 					counter--;
-				if (repeat == 0 && complete != null)
+				if (repeat == 0 || repeat == -1 && complete != null)
 					complete();
 			}
 			if (repeat != 0 && complete != null)
@@ -139,7 +139,7 @@ namespace ca.HenrySoftware.Ease
 					Camera.main.backgroundColor = Camera.main.backgroundColor.SetAlpha(value);
 			};
 			var counter = repeat;
-			while (repeat == 0 || counter > 0)
+			while (repeat == 0 || repeat == -1 || counter > 0)
 			{
 				if (delay > 0f)
 				{
@@ -182,7 +182,7 @@ namespace ca.HenrySoftware.Ease
 				}
 				if (repeat != 0)
 					counter--;
-				if (repeat == 0 && complete != null)
+				if (repeat == 0 || repeat == -1 && complete != null)
 					complete();
 			}
 			if (repeat != 0 && complete != null)
@@ -409,7 +409,7 @@ namespace ca.HenrySoftware.Ease
 			float delay, int repeat, bool pingPong, bool realTime)
 		{
 			var counter = repeat;
-			while (repeat == 0 || counter > 0)
+			while (repeat == 0 || repeat == -1 || counter > 0)
 			{
 				if (delay > 0f)
 				{
@@ -444,7 +444,7 @@ namespace ca.HenrySoftware.Ease
 				}
 				if (repeat != 0)
 					counter--;
-				if (repeat == 0 && complete != null)
+				if (repeat == 0 || repeat == -1 && complete != null)
 					complete();
 			}
 			if (repeat != 0 && complete != null)
@@ -476,7 +476,7 @@ namespace ca.HenrySoftware.Ease
 			float delay, int repeat, bool pingPong, bool realTime)
 		{
 			var counter = repeat;
-			while (repeat == 0 || counter > 0)
+			while (repeat == 0 || repeat == -1 || counter > 0)
 			{
 				if (delay > 0f)
 				{
@@ -519,7 +519,7 @@ namespace ca.HenrySoftware.Ease
 				}
 				if (repeat != 0)
 					counter--;
-				if (repeat == 0 && complete != null)
+				if (repeat == 0 || repeat == -1 && complete != null)
 					complete();
 			}
 			if (repeat != 0 && complete != null)
@@ -551,7 +551,7 @@ namespace ca.HenrySoftware.Ease
 			float delay, int repeat, bool pingPong, bool realTime)
 		{
 			var counter = repeat;
-			while (repeat == 0 || counter > 0)
+			while (repeat == 0 || repeat == -1 || counter > 0)
 			{
 				if (delay > 0f)
 				{
@@ -594,7 +594,7 @@ namespace ca.HenrySoftware.Ease
 				}
 				if (repeat != 0)
 					counter--;
-				if (repeat == 0 && complete != null)
+				if (repeat == 0 || repeat == -1 && complete != null)
 					complete();
 			}
 			if (repeat != 0 && complete != null)
@@ -634,7 +634,7 @@ namespace ca.HenrySoftware.Ease
 				return d;
 			};
 			var counter = repeat;
-			while (repeat == 0 || counter > 0)
+			while (repeat == 0 || repeat == -1 || counter > 0)
 			{
 				if (delay > 0f)
 				{
@@ -677,7 +677,7 @@ namespace ca.HenrySoftware.Ease
 				}
 				if (repeat != 0)
 					counter--;
-				if (repeat == 0 && complete != null)
+				if (repeat == 0 || repeat == -1 && complete != null)
 					complete();
 			}
 			if (repeat != 0 && complete != null)
@@ -723,7 +723,7 @@ namespace ca.HenrySoftware.Ease
 					image.color = value.GetColor().SetAlpha(image.color.a);
 			};
 			var counter = repeat;
-			while (repeat == 0 || counter > 0)
+			while (repeat == 0 || repeat == -1 || counter > 0)
 			{
 				if (delay > 0f)
 				{
@@ -766,7 +766,7 @@ namespace ca.HenrySoftware.Ease
 				}
 				if (repeat != 0)
 					counter--;
-				if (repeat == 0 && complete != null)
+				if (repeat == 0 || repeat == -1 && complete != null)
 					complete();
 			}
 			if (repeat != 0 && complete != null)
@@ -823,7 +823,7 @@ namespace ca.HenrySoftware.Ease
 			float delay, int repeat, bool pingPong, bool realTime)
 		{
 			var counter = repeat;
-			while (repeat == 0 || counter > 0)
+			while (repeat == 0 || repeat == -1 || counter > 0)
 			{
 				if (delay > 0f)
 				{
@@ -858,7 +858,7 @@ namespace ca.HenrySoftware.Ease
 				}
 				if (repeat != 0)
 					counter--;
-				if (repeat == 0 && complete != null)
+				if (repeat == 0 || repeat == -1 && complete != null)
 					complete();
 			}
 			if (repeat != 0 && complete != null)
@@ -904,7 +904,7 @@ namespace ca.HenrySoftware.Ease
 					image.color = value.GetColor();
 			};
 			var counter = repeat;
-			while (repeat == 0 || counter > 0)
+			while (repeat == 0 || repeat == -1 || counter > 0)
 			{
 				if (delay > 0f)
 				{
@@ -947,7 +947,7 @@ namespace ca.HenrySoftware.Ease
 				}
 				if (repeat != 0)
 					counter--;
-				if (repeat == 0 && complete != null)
+				if (repeat == 0 || repeat == -1 && complete != null)
 					complete();
 			}
 			if (repeat != 0 && complete != null)
