@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 namespace ca.HenrySoftware.Ease
 {
-	public class Timer : MonoBehaviour
+	public class TestEase : MonoBehaviour
 	{
 		[SerializeField] private Image _slowStatus = null;
 		private bool _slow;
