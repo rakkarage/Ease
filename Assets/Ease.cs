@@ -56,14 +56,14 @@ namespace ca.HenrySoftware.Ease
 				if (delay > 0f)
 				{
 					if (realTime)
-						yield return m.StartCoroutine(RealTime.Instance.WaitForSeconds(delay));
+						yield return new WaitForSecondsRealtime(delay);
 					else
 						yield return new WaitForSeconds(delay);
 				}
 				var t = 0f;
 				while (t <= 1f)
 				{
-					t += (realTime ? RealTime.Instance.DeltaTime : Time.deltaTime) / time;
+					t += (realTime ? Time.unscaledDeltaTime : Time.deltaTime) / time;
 					update(Types[type](from, to, Mathf.Clamp01(t)));
 					yield return null;
 				}
@@ -72,14 +72,14 @@ namespace ca.HenrySoftware.Ease
 					if (delay > 0f)
 					{
 						if (realTime)
-							yield return m.StartCoroutine(RealTime.Instance.WaitForSeconds(delay));
+							yield return new WaitForSecondsRealtime(delay);
 						else
 							yield return new WaitForSeconds(delay);
 					}
 					t = 0f;
 					while (t <= 1f)
 					{
-						t += (realTime ? RealTime.Instance.DeltaTime : Time.deltaTime) / time;
+						t += (realTime ? Time.unscaledDeltaTime : Time.deltaTime) / time;
 						update(Types[type](to, from, Mathf.Clamp01(t)));
 						yield return null;
 					}
@@ -144,14 +144,14 @@ namespace ca.HenrySoftware.Ease
 				if (delay > 0f)
 				{
 					if (realTime)
-						yield return m.StartCoroutine(RealTime.Instance.WaitForSeconds(delay));
+						yield return new WaitForSecondsRealtime(delay);
 					else
 						yield return new WaitForSeconds(delay);
 				}
 				var t = 0f;
 				while (t <= 1f)
 				{
-					t += (realTime ? RealTime.Instance.DeltaTime : Time.deltaTime) / time;
+					t += (realTime ? Time.unscaledDeltaTime : Time.deltaTime) / time;
 					var p = Types[type](from, to, Mathf.Clamp01(t));
 					setAlpha(p);
 					if (update != null)
@@ -164,14 +164,14 @@ namespace ca.HenrySoftware.Ease
 					if (delay > 0f)
 					{
 						if (realTime)
-							yield return m.StartCoroutine(RealTime.Instance.WaitForSeconds(delay));
+							yield return new WaitForSecondsRealtime(delay);
 						else
 							yield return new WaitForSeconds(delay);
 					}
 					t = 0f;
 					while (t <= 1f)
 					{
-						t += (realTime ? RealTime.Instance.DeltaTime : Time.deltaTime) / time;
+						t += (realTime ? Time.unscaledDeltaTime : Time.deltaTime) / time;
 						var p = Types[type](to, from, Mathf.Clamp01(t));
 						setAlpha(p);
 						if (update != null)
@@ -414,14 +414,14 @@ namespace ca.HenrySoftware.Ease
 				if (delay > 0f)
 				{
 					if (realTime)
-						yield return m.StartCoroutine(RealTime.Instance.WaitForSeconds(delay));
+						yield return new WaitForSecondsRealtime(delay);
 					else
 						yield return new WaitForSeconds(delay);
 				}
 				var t = 0f;
 				while (t <= 1f)
 				{
-					t += (realTime ? RealTime.Instance.DeltaTime : Time.deltaTime) / time;
+					t += (realTime ? Time.unscaledDeltaTime : Time.deltaTime) / time;
 					update(Types[type](from, to, Mathf.Clamp01(t)));
 					yield return null;
 				}
@@ -430,14 +430,14 @@ namespace ca.HenrySoftware.Ease
 					if (delay > 0f)
 					{
 						if (realTime)
-							yield return m.StartCoroutine(RealTime.Instance.WaitForSeconds(delay));
+							yield return new WaitForSecondsRealtime(delay);
 						else
 							yield return new WaitForSeconds(delay);
 					}
 					t = 0f;
 					while (t <= 1f)
 					{
-						t += (realTime ? RealTime.Instance.DeltaTime : Time.deltaTime) / time;
+						t += (realTime ? Time.unscaledDeltaTime : Time.deltaTime) / time;
 						update(Types[type](to, from, Mathf.Clamp01(t)));
 						yield return null;
 					}
@@ -481,14 +481,14 @@ namespace ca.HenrySoftware.Ease
 				if (delay > 0f)
 				{
 					if (realTime)
-						yield return m.StartCoroutine(RealTime.Instance.WaitForSeconds(delay));
+						yield return new WaitForSecondsRealtime(delay);
 					else
 						yield return new WaitForSeconds(delay);
 				}
 				var t = 0f;
 				while (t <= 1f)
 				{
-					t += (realTime ? RealTime.Instance.DeltaTime : Time.deltaTime) / time;
+					t += (realTime ? Time.unscaledDeltaTime : Time.deltaTime) / time;
 					var p = Types[type](from, to, Mathf.Clamp01(t));
 					m.transform.localPosition = p;
 					if (update != null)
@@ -501,14 +501,14 @@ namespace ca.HenrySoftware.Ease
 					if (delay > 0f)
 					{
 						if (realTime)
-							yield return m.StartCoroutine(RealTime.Instance.WaitForSeconds(delay));
+							yield return new WaitForSecondsRealtime(delay);
 						else
 							yield return new WaitForSeconds(delay);
 					}
 					t = 0f;
 					while (t <= 1f)
 					{
-						t += (realTime ? RealTime.Instance.DeltaTime : Time.deltaTime) / time;
+						t += (realTime ? Time.unscaledDeltaTime : Time.deltaTime) / time;
 						var p = Types[type](to, from, Mathf.Clamp01(t));
 						m.transform.localPosition = p;
 						if (update != null)
@@ -556,14 +556,14 @@ namespace ca.HenrySoftware.Ease
 				if (delay > 0f)
 				{
 					if (realTime)
-						yield return m.StartCoroutine(RealTime.Instance.WaitForSeconds(delay));
+						yield return new WaitForSecondsRealtime(delay);
 					else
 						yield return new WaitForSeconds(delay);
 				}
 				var t = 0f;
 				while (t <= 1f)
 				{
-					t += (realTime ? RealTime.Instance.DeltaTime : Time.deltaTime) / time;
+					t += (realTime ? Time.unscaledDeltaTime : Time.deltaTime) / time;
 					var p = Types[type](from, to, Mathf.Clamp01(t));
 					m.transform.localEulerAngles = p;
 					if (update != null)
@@ -576,14 +576,14 @@ namespace ca.HenrySoftware.Ease
 					if (delay > 0f)
 					{
 						if (realTime)
-							yield return m.StartCoroutine(RealTime.Instance.WaitForSeconds(delay));
+							yield return new WaitForSecondsRealtime(delay);
 						else
 							yield return new WaitForSeconds(delay);
 					}
 					t = 0f;
 					while (t <= 1f)
 					{
-						t += (realTime ? RealTime.Instance.DeltaTime : Time.deltaTime) / time;
+						t += (realTime ? Time.unscaledDeltaTime : Time.deltaTime) / time;
 						var p = Types[type](to, from, Mathf.Clamp01(t));
 						m.transform.localEulerAngles = p;
 						if (update != null)
@@ -625,10 +625,10 @@ namespace ca.HenrySoftware.Ease
 			UnityAction<Vector3> update, UnityAction complete, EaseType type,
 			float delay, int repeat, bool pingPong, bool realTime)
 		{
-			var last = Time.realtimeSinceStartup;
+			var last = Time.unscaledTime;
 			Func<float> deltaTime = () =>
 			{
-				var t = Time.realtimeSinceStartup;
+				var t = Time.unscaledTime;
 				var d = t - last;
 				last = t;
 				return d;
@@ -639,7 +639,7 @@ namespace ca.HenrySoftware.Ease
 				if (delay > 0f)
 				{
 					if (realTime)
-						yield return m.StartCoroutine(RealTime.Instance.WaitForSeconds(delay));
+						yield return new WaitForSecondsRealtime(delay);
 					else
 						yield return new WaitForSeconds(delay);
 				}
@@ -659,7 +659,7 @@ namespace ca.HenrySoftware.Ease
 					if (delay > 0f)
 					{
 						if (realTime)
-							yield return m.StartCoroutine(RealTime.Instance.WaitForSeconds(delay));
+							yield return new WaitForSecondsRealtime(delay);
 						else
 							yield return new WaitForSeconds(delay);
 					}
@@ -728,14 +728,14 @@ namespace ca.HenrySoftware.Ease
 				if (delay > 0f)
 				{
 					if (realTime)
-						yield return m.StartCoroutine(RealTime.Instance.WaitForSeconds(delay));
+						yield return new WaitForSecondsRealtime(delay);
 					else
 						yield return new WaitForSeconds(delay);
 				}
 				var t = 0f;
 				while (t <= 1f)
 				{
-					t += (realTime ? RealTime.Instance.DeltaTime : Time.deltaTime) / time;
+					t += (realTime ? Time.unscaledDeltaTime : Time.deltaTime) / time;
 					var p = Types[type](from, to, Mathf.Clamp01(t));
 					setColor(p);
 					if (update != null)
@@ -748,14 +748,14 @@ namespace ca.HenrySoftware.Ease
 					if (delay > 0f)
 					{
 						if (realTime)
-							yield return m.StartCoroutine(RealTime.Instance.WaitForSeconds(delay));
+							yield return new WaitForSecondsRealtime(delay);
 						else
 							yield return new WaitForSeconds(delay);
 					}
 					t = 0f;
 					while (t <= 1f)
 					{
-						t += (realTime ? RealTime.Instance.DeltaTime : Time.deltaTime) / time;
+						t += (realTime ? Time.unscaledDeltaTime : Time.deltaTime) / time;
 						var p = Types[type](to, from, Mathf.Clamp01(t));
 						setColor(p);
 						if (update != null)
@@ -828,14 +828,14 @@ namespace ca.HenrySoftware.Ease
 				if (delay > 0f)
 				{
 					if (realTime)
-						yield return m.StartCoroutine(RealTime.Instance.WaitForSeconds(delay));
+						yield return new WaitForSecondsRealtime(delay);
 					else
 						yield return new WaitForSeconds(delay);
 				}
 				var t = 0f;
 				while (t <= 1f)
 				{
-					t += (realTime ? RealTime.Instance.DeltaTime : Time.deltaTime) / time;
+					t += (realTime ? Time.unscaledDeltaTime : Time.deltaTime) / time;
 					update(Types[type](from, to, Mathf.Clamp01(t)));
 					yield return null;
 				}
@@ -844,14 +844,14 @@ namespace ca.HenrySoftware.Ease
 					if (delay > 0f)
 					{
 						if (realTime)
-							yield return m.StartCoroutine(RealTime.Instance.WaitForSeconds(delay));
+							yield return new WaitForSecondsRealtime(delay);
 						else
 							yield return new WaitForSeconds(delay);
 					}
 					t = 0f;
 					while (t <= 1f)
 					{
-						t += (realTime ? RealTime.Instance.DeltaTime : Time.deltaTime) / time;
+						t += (realTime ? Time.unscaledDeltaTime : Time.deltaTime) / time;
 						update(Types[type](to, from, Mathf.Clamp01(t)));
 						yield return null;
 					}
@@ -909,14 +909,14 @@ namespace ca.HenrySoftware.Ease
 				if (delay > 0f)
 				{
 					if (realTime)
-						yield return m.StartCoroutine(RealTime.Instance.WaitForSeconds(delay));
+						yield return new WaitForSecondsRealtime(delay);
 					else
 						yield return new WaitForSeconds(delay);
 				}
 				var t = 0f;
 				while (t <= 1f)
 				{
-					t += (realTime ? RealTime.Instance.DeltaTime : Time.deltaTime) / time;
+					t += (realTime ? Time.unscaledDeltaTime : Time.deltaTime) / time;
 					var p = Types[type](from, to, Mathf.Clamp01(t));
 					setColor(p);
 					if (update != null)
@@ -929,14 +929,14 @@ namespace ca.HenrySoftware.Ease
 					if (delay > 0f)
 					{
 						if (realTime)
-							yield return m.StartCoroutine(RealTime.Instance.WaitForSeconds(delay));
+							yield return new WaitForSecondsRealtime(delay);
 						else
 							yield return new WaitForSeconds(delay);
 					}
 					t = 0f;
 					while (t <= 1f)
 					{
-						t += (realTime ? RealTime.Instance.DeltaTime : Time.deltaTime) / time;
+						t += (realTime ? Time.unscaledDeltaTime : Time.deltaTime) / time;
 						var p = Types[type](to, from, Mathf.Clamp01(t));
 						setColor(p);
 						if (update != null)
@@ -952,6 +952,44 @@ namespace ca.HenrySoftware.Ease
 			}
 			if (repeat != 0 && complete != null)
 				complete();
+		}
+	}
+	public static class VectorExtensions
+	{
+		public static Color GetColor(this Vector3 v)
+		{
+			return new Color(Mathf.Clamp01(v.x), Mathf.Clamp01(v.y), Mathf.Clamp01(v.z));
+		}
+		public static Color GetColor(this Vector4 v)
+		{
+			return new Color(Mathf.Clamp01(v.x), Mathf.Clamp01(v.y), Mathf.Clamp01(v.z), Mathf.Clamp01(v.w));
+		}
+	}
+	public static class ColorExtensions
+	{
+		public static Vector3 GetVector3(this Color c)
+		{
+			return new Vector3(c.r, c.g, c.b);
+		}
+		public static Vector4 GetVector4(this Color c)
+		{
+			return new Vector4(c.r, c.g, c.b, c.a);
+		}
+		public static Color SetAlpha(this Color c, float a)
+		{
+			return new Color(c.r, c.g, c.b, a);
+		}
+	}
+	public class WaitForSecondsRealtime : CustomYieldInstruction
+	{
+		private float _time;
+		public override bool keepWaiting
+		{
+			get { return Time.unscaledTime < _time; }
+		}
+		public WaitForSecondsRealtime(float time)
+		{
+			_time = Time.unscaledTime + time;
 		}
 	}
 }
