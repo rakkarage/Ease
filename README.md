@@ -17,12 +17,12 @@ Simple Unity3D Easing
 		Spring
 	}
 
-- Ease
+- Ease: ease a float, or alpha
 	- Go
 	- GoAlphaTo
 	- GoAlphaBy
 	- GoAlpha
-- Ease3
+- Ease3: ease a Vector2, or transform
 	- Go
 	- GoPositionTo
 	- GoPositionBy
@@ -33,7 +33,7 @@ Simple Unity3D Easing
 	- GoScaleTo
 	- GoScaleBy
 	- GoScale
-- Ease4
+- Ease4: ease a Vector4, or color
 	- Go
 	- GoColorTo
 	- GoColorBy
