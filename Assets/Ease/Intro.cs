@@ -1,52 +1,49 @@
-﻿using ca.HenrySoftware.Rage;
+using ca.HenrySoftware.Rage;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+[RequireComponent(typeof(AudioSource))]
 public class Intro : MonoBehaviour
 {
-	[SerializeField] private MonoBehaviour _logo = null;
-	[SerializeField] private MonoBehaviour _foreground = null;
-	[SerializeField] private GameObject[] _activate = null;
-	private AudioSource _source;
-	public static readonly Color HenryBlue = new Color32(59, 67, 82, 255);
-	private const float TimeAnimation = 1f;
-	private const float TimeDelay = .5f;
-	private const float TimeDelaySound = .8f;
-	private void Awake()
-	{
-		if (_activate == null) return;
-		foreach (var i in _activate)
-			i.SetActive(false);
-	}
-	private void Start()
+	public Image Henry;
+	public Button Fore;
+	AudioSource _source;
+	const float _timeAnimation = 1.0f;
+	const float _timeDelay = .5f;
+	const float _timeDelaySound = .8f;
+	void Awake()
 	{
 		_source = GetComponent<AudioSource>();
-		StartCoroutine(PlayDelayed(TimeDelaySound));
-		Ease3.GoScaleTo(_logo, new Vector3(2f, 2f, 1f), TimeAnimation, null, null, EaseType.BounceOut, TimeDelay);
-		Ease3.GoRotationTo(_logo, new Vector3(0f, 0f, 180f), TimeAnimation, null, null, EaseType.BounceOut, TimeDelay);
-		Ease3.GoColorTo(this, Color.black.GetVector3(), TimeAnimation, null, Fade, EaseType.BounceOut, TimeDelay);
 	}
-	private IEnumerator PlayDelayed(float time)
+	void Start()
 	{
-		yield return new WaitForSeconds(time);
+		var scale = 2;
+		var camera = Camera.main;
+		if (camera != null)
+		{
+			var fitX = (int)(Screen.width / Henry.sprite.rect.width);
+			var fitY = (int)(Screen.height / Henry.sprite.rect.height);
+			var newScale = Mathf.Min(fitX, fitY) - 2;
+			if (newScale > scale)
+				scale = newScale;
+		}
+		StartCoroutine(PlayDelayed());
+		Ease3.GoScaleTo(Henry, new Vector3(scale, scale, 1f), _timeAnimation, null, null, EaseType.BounceOut, _timeDelay);
+		Ease3.GoRotationTo(Henry, new Vector3(0f, 0f, 180f), _timeAnimation, null, null, EaseType.BounceOut, _timeDelay);
+		Ease3.GoColorTo(this, Color.black.GetVector3(), _timeAnimation, null, Fade, EaseType.BounceOut, _timeDelay);
+	}
+	void Done()
+	{
+		SceneManager.LoadSceneAsync(1);
+	}
+	IEnumerator PlayDelayed()
+	{
+		yield return new WaitForSeconds(_timeDelaySound);
 		_source.Play();
 	}
-	private void Fade()
+	void Fade()
 	{
-		Ease.GoAlpha(_foreground, 0f, 1f, TimeAnimation, null, Next, EaseType.Linear, TimeAnimation);
-	}
-	public void Next()
-	{
-		StopAllCoroutines();
-		_foreground.StopAllCoroutines();
-		_logo.gameObject.SetActive(false);
-		Ease.GoAlphaTo(_foreground, 0f, TimeAnimation, null, Finish);
-		Camera.main.backgroundColor = HenryBlue;
-		if (_activate == null) return;
-		foreach (var i in _activate)
-			i.SetActive(true);
-	}
-	private void Finish()
-	{
-		gameObject.SetActive(false);
+		Ease.GoAlpha(Fore, 0f, 1f, _timeAnimation, null, Done, EaseType.Linear, _timeAnimation);
 	}
 }
