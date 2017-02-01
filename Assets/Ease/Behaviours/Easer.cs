@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
-namespace ca.HenrySoftware.Ease
+namespace ca.HenrySoftware.Rage
 {
 	public abstract class Easer<T> : MonoBehaviour
 	{

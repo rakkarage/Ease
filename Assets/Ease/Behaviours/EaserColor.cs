@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-namespace ca.HenrySoftware.Ease
+namespace ca.HenrySoftware.Rage
 {
 	public class EaserColor : Easer<Color>
 	{
