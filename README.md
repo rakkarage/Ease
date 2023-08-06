@@ -221,7 +221,9 @@ IEnumerator GoScaleBy(MonoBehaviour m, Vector3 by, float time,
 Starts an easing animation on the color of a Image component or the background color of the main camera from a starting value to an ending value.
 
 ```csharp
-IEnumerator GoColor(MonoBehaviour m, Vector3 from, Vector3 to, float time, Action<Vector3> update = null, Action complete = null, EaseType type = EaseType.Linear, float delay = 0f, int repeat = 1, bool pingPong = false, bool realTime = false)
+IEnumerator GoColor(MonoBehaviour m, Vector3 from, Vector3 to, float time,
+    Action<Vector3> update = null, Action complete = null, EaseType type = EaseType.Linear,
+    float delay = 0f, int repeat = 1, bool pingPong = false, bool realTime = false)
 ```
 
 #### Ease3.GoColorTo
